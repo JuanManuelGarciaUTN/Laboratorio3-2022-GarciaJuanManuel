@@ -1,0 +1,161 @@
+* {
+    font-family: sans-serif;
+    font-size: 2.5vh;
+    font-weight: 700;
+}
+
+h1 {
+    display: inline-block;
+    margin: 10px 10vw;
+    padding: 10px 20px;
+    border-radius: 2.5vw;
+    background-color: #aaa;
+    font-size: 3.5vh;
+    font-weight: 900;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3vh;
+    font-weight: 800;
+}
+
+.id,
+.nombre,
+.apellido,
+.edad,
+.alterEgo,
+.ciudad,
+.publicado,
+.enemigo,
+.robos,
+.asesinatos {
+    display: table-cell;
+}
+
+.id-oculta,
+.nombre-oculta,
+.apellido-oculta,
+.edad-oculta,
+.alterEgo-oculta,
+.ciudad-oculta,
+.publicado-oculta,
+.enemigo-oculta,
+.robos-oculta,
+.asesinatos-oculta {
+    display: none;
+}
+
+p,
+div {
+    margin: 5px auto;
+    border: 0ch;
+}
+
+button {
+    border-radius: 100vh;
+    padding: 6px 12px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #bbb;
+}
+
+th {
+    padding: 12px;
+    text-align: center;
+    background-color: #666;
+}
+
+th button {
+    width: 100%;
+    text-align: center;
+    background-color: #ddd;
+}
+
+input {
+    background-color: #ddd;
+}
+
+body {
+    background-color: #222;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: 1;
+}
+
+#botonAgregar button {
+    font-weight: 800;
+    font-size: 3vh;
+    width: 200px;
+    text-align: center;
+}
+
+#botonAgregar {
+    display: flex;
+    justify-content: center;
+}
+
+.formulario {
+    background-color: #aaa;
+    padding: 1vh 4vh;
+    align-self: center;
+    border-radius: 2.5vw;
+}
+
+.labelABM {
+    display: inline-block;
+    width: 130px;
+}
+
+#formularioDatos-divEdadPromedio label,
+#formularioDatos-divFiltroTipo label {
+    display: inline-block;
+    width: 260px;
+}
+
+#formularioDatos-filtroColumnas {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    justify-content: space-around;
+}
+
+#formularioDatos-divFiltroTipo select {
+    display: inline-block;
+    width: 150px;
+}
+
+#formularioDatos-divEdadPromedio input {
+    display: inline-block;
+    width: 140px;
+}
+
+.inputABM {
+    padding: 1px 2px;
+    width: 300px;
+    margin: 5px 0;
+    border: 1px solid #222;
+}
+
+#botonesABM {
+    display: flex;
+    justify-content: space-around;
+}
+
+table {
+    outline: 0px solid #555;
+    border-width: 4px 0 4px 0;
+}
+
+td {
+    text-align: center;
+    outline: 1px solid #ddd;
+    padding: 8px;
+}
+
+#formularioDatos-tabla tr:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}

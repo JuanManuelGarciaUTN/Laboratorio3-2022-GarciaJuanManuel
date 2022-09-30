@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Parcial Laboratorio 3</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo.css">
+    <script src="./logica.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Primer Parcial - Alumno: Garcia Juan Manuel</h1>
+    <div class="formulario" id="formularioDatos">
+        <h2>Formulario Datos</h2>
+        <div id="formularioDatos-divFiltroTipo">
+            <label>Filtrar Por</label>
+            <select name="" id="formularioDatos-tipoSelecto" onchange="FiltrarTipo(this)">
+                <option value="todos" selected>Todos</option>
+                <option value="Heroe">Heroe</option>
+                <option value="Villano">Villano</option>
+            </select>
+        </div>
+        <div id="formularioDatos-divEdadPromedio">
+            <label for="">Calular Edad Promedio</label>
+            <input type="text" name="" id="formularioDatos-edadPromedio" readonly>
+            <button onclick="CalcularEdadPromedio()">Calcular</button>
+        </div>
+        <p>Mostrar Columnas:</p>
+        <div id="formularioDatos-filtroColumnas">
+            <label><input type="checkbox" name="id" id="formularioDatos-id" checked
+                    onchange="FiltrarClase('id',checked)">
+                ID</label>
+            <label><input type="checkbox" name="nombre" id="formularioDatos-nombre" checked
+                    onchange="FiltrarClase('nombre',checked)">
+                Nombre</label>
+            <label><input type="checkbox" name="apellido" id="formularioDatos-apellido" checked
+                    onchange="FiltrarClase('apellido',checked)">
+                Apellido</label>
+            <label><input type="checkbox" name="edad" id="formularioDatos-edad" checked
+                    onchange="FiltrarClase('edad',checked)">
+                Edad</label>
+            <label><input type="checkbox" name="alterEgo" id="formularioDatos-alterEgo" checked
+                    onchange="FiltrarClase('alterEgo',checked)">
+                AlterEgo</label>
+            <label><input type="checkbox" name="ciudad" id="formularioDatos-ciudad" checked
+                    onchange="FiltrarClase('ciudad',checked)">
+                Ciudad</label>
+            <label><input type="checkbox" name="publicado" id="formularioDatos-publicado" checked
+                    onchange="FiltrarClase('publicado',checked)">
+                Publicado</label>
+            <label><input type="checkbox" name="enemigo" id="formularioDatos-enemigo" checked
+                    onchange="FiltrarClase('enemigo',checked)">
+                Enemigo</label>
+            <label><input type="checkbox" name="robos" id="formularioDatos-robos" checked
+                    onchange="FiltrarClase('robos',checked)">
+                Robos</label>
+            <label><input type="checkbox" name="asesinatos" id="formularioDatos-asesinatos" checked
+                    onchange="FiltrarClase('asesinatos',checked)">
+                Asesinatos</label>
+        </div>
+        <table>
+            <thead>
+                <tr>
+
+                </tr>
+                <tr>
+                    <th class="id"><button onclick="OrdenarPorId()">ID</button></th>
+                    <th class="nombre"><button onclick="OrdenarPorNombre()">Nombre</button></th>
+                    <th class="apellido"><button onclick="OrdenarPorApellido()">Apellido</button></th>
+                    <th class="edad"><button onclick="OrdenarPorEdad()">Edad</button></th>
+                    <th class="alterEgo"><button onclick="OrdenarPorAlterEgo()">AlterEgo</button></th>
+                    <th class="ciudad"><button onclick="OrdenarPorCiudad()">Ciudad</button></th>
+                    <th class="publicado"><button onclick="OrdenarPorPublicado()">Publicado</button></th>
+                    <th class="enemigo"><button onclick="OrdenarPorEnemigo()">Enemigo</button></th>
+                    <th class="robos"><button onclick="OrdenarPorRobos()">Robos</button></th>
+                    <th class="asesinatos"><button onclick="OrdenarPorAsesinatos()">Asesinatos</button></th>
+                </tr>
+            </thead>
+            <tbody id="formularioDatos-tabla">
+            </tbody>
+        </table>
+        <div id="botonAgregar">
+            <button onclick="IniciarAbmAgregar()">Agregar</button>
+        </div>
+    </div>
+
+    <div class="formulario" id="formularioABM" hidden>
+        <h2>Formulario ABM</h2>
+        <div>
+            <label for="" class="labelABM">ID: </label><input type="text" readonly id="formularioABM-id"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">Nombre: </label><input type="text" id="formularioABM-nombre"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">Apellido: </label><input type="text" id="formularioABM-apellido"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">Edad: </label><input type="text" id="formularioABM-edad" class="inputABM">
+        </div>
+        <div>
+            <label class="labelABM">Tipo: </label>
+            <select id="formularioABM-tipoDePersona" onchange="MostrarOpcionesAbmCorrectas()" class="inputABM">
+                <option value="Heroe" selected>Heroe</option>
+                <option value="Villano">Villano</option>
+            </select>
+        </div>
+        <div>
+            <label for="" class="labelABM">AlterEgo: </label><input type="text" id="formularioABM-alterEgo"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">Ciudad: </label><input type="text" id="formularioABM-ciudad"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">Publicado: </label><input type="text" id="formularioABM-publicado"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">Enemigo: </label><input type="text" id="formularioABM-enemigo"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">Robos: </label><input type="text" id="formularioABM-robos"
+                class="inputABM">
+        </div>
+        <div>
+            <label for="" class="labelABM">Asesinatos: </label><input type="text" id="formularioABM-asesinatos"
+                class="inputABM">
+        </div>
+        <div id="botonesABM">
+            <button id="formularioABM-botonAlta" onclick="AltaPersona()">Alta</button>
+            <button id="formularioABM-botonModificar" onclick="ModificarPersona()">Modificar</button>
+            <button id="formularioABM-botonEliminar" onclick="EliminarPersona()">Eliminar</button>
+            <button onclick="MostrarFormDatos()">Cancelar</button>
+        </div>
+    </div>
+</body>
+
+</html>
