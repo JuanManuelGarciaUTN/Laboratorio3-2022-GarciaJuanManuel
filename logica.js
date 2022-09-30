@@ -110,13 +110,15 @@ function AgregarElementoATabla(elemento)
 {
     let estado;
     let celdaTabla;
+
     //genera la fila de la tabla
-    tableRow = document.createElement("tr");
+    let tableRow = document.createElement("tr");
     tableRow.setAttribute("id", elemento.id);
     tableRow.classList.add(elemento.constructor.name);
 
     //verifico si tiene que estar en vista o no
     let tipoSelecionado = formularioDatos.tipoSelecto.options[formularioDatos.tipoSelecto.selectedIndex].value;
+    
     if(tipoSelecionado != "todos" && elemento.constructor.name != tipoSelecionado)
     {
         tableRow.hidden = true;
@@ -196,7 +198,7 @@ function AgregarElementoATabla(elemento)
 function FiltrarTipo(listaSeleccion)
 {
     //obtiene el valor seleccionado de tipo
-    selecionado = listaSeleccion.options[listaSeleccion.selectedIndex].value;
+    let selecionado = listaSeleccion.options[listaSeleccion.selectedIndex].value;
     
     //si el tipo seleccionado es todos, muestra todas las filas
     if(selecionado === "todos")
@@ -290,8 +292,8 @@ function OrdenarDatos(criterio)
 function OrdenarPorId()
 {
     criterio = (a, b) => {
-        textoUno = a.querySelector(".id").textContent;
-        textoDos = b.querySelector(".id").textContent;
+        let textoUno = a.querySelector(".id").textContent;
+        let textoDos = b.querySelector(".id").textContent;
 
         textoUno = parseInt(textoUno) || 0;
         textoDos = parseInt(textoDos) || 0;
@@ -306,8 +308,8 @@ function OrdenarPorId()
 function OrdenarPorNombre()
 {
     criterio = (a, b) => {
-        textoUno = a.querySelector(".nombre").textContent;
-        textoDos = b.querySelector(".nombre").textContent;
+        let textoUno = a.querySelector(".nombre").textContent;
+        let textoDos = b.querySelector(".nombre").textContent;
 
         return textoUno.localeCompare(textoDos);
     };
@@ -319,8 +321,8 @@ function OrdenarPorNombre()
 function OrdenarPorApellido()
 {
     criterio = (a, b) => {
-        textoUno = a.querySelector(".apellido").textContent;
-        textoDos = b.querySelector(".apellido").textContent;
+        let textoUno = a.querySelector(".apellido").textContent;
+        let textoDos = b.querySelector(".apellido").textContent;
 
         return textoUno.localeCompare(textoDos);
     };
@@ -332,8 +334,8 @@ function OrdenarPorApellido()
 function OrdenarPorEdad()
 {
     criterio = (a, b) => {
-        textoUno = a.querySelector(".edad").textContent;
-        textoDos = b.querySelector(".edad").textContent;
+        let textoUno = a.querySelector(".edad").textContent;
+        let textoDos = b.querySelector(".edad").textContent;
 
         return parseInt(textoUno) - parseInt(textoDos);
     };
@@ -345,8 +347,8 @@ function OrdenarPorEdad()
 function OrdenarPorAlterEgo()
 {
     criterio = (a, b) => {
-        textoUno = a.querySelector(".alterEgo").textContent;
-        textoDos = b.querySelector(".alterEgo").textContent;
+        let textoUno = a.querySelector(".alterEgo").textContent;
+        let textoDos = b.querySelector(".alterEgo").textContent;
 
         return textoUno.localeCompare(textoDos);
     };
@@ -358,8 +360,8 @@ function OrdenarPorAlterEgo()
 function OrdenarPorCiudad()
 {
     criterio = (a, b) => {
-        textoUno = a.querySelector(".ciudad").textContent;
-        textoDos = b.querySelector(".ciudad").textContent;
+        let textoUno = a.querySelector(".ciudad").textContent;
+        let textoDos = b.querySelector(".ciudad").textContent;
 
         return textoUno.localeCompare(textoDos);
     };
@@ -371,8 +373,8 @@ function OrdenarPorCiudad()
 function OrdenarPorPublicado()
 {
     criterio = (a, b) => {
-        textoUno = a.querySelector(".publicado").textContent;
-        textoDos = b.querySelector(".publicado").textContent;
+        let textoUno = a.querySelector(".publicado").textContent;
+        let textoDos = b.querySelector(".publicado").textContent;
 
         textoUno = parseInt(textoUno) || -1;
         textoDos = parseInt(textoDos) || -1;
@@ -387,8 +389,8 @@ function OrdenarPorPublicado()
 function OrdenarPorEnemigo()
 {
     criterio = (a, b) => {
-        textoUno = a.querySelector(".enemigo").textContent;
-        textoDos = b.querySelector(".enemigo").textContent;
+        let textoUno = a.querySelector(".enemigo").textContent;
+        let textoDos = b.querySelector(".enemigo").textContent;
 
         return textoUno.localeCompare(textoDos);
     };
@@ -400,8 +402,8 @@ function OrdenarPorEnemigo()
 function OrdenarPorRobos()
 {
     criterio = (a, b) => {
-        textoUno = a.querySelector(".robos").textContent;
-        textoDos = b.querySelector(".robos").textContent;
+        let textoUno = a.querySelector(".robos").textContent;
+        let textoDos = b.querySelector(".robos").textContent;
 
         textoUno = parseInt(textoUno) || -1;
         textoDos = parseInt(textoDos) || -1;
@@ -416,8 +418,8 @@ function OrdenarPorRobos()
 function OrdenarPorAsesinatos()
 {
     criterio = (a, b) => {
-        textoUno = a.querySelector(".asesinatos").textContent;
-        textoDos = b.querySelector(".asesinatos").textContent;
+        let textoUno = a.querySelector(".asesinatos").textContent;
+        let textoDos = b.querySelector(".asesinatos").textContent;
 
         textoUno = parseInt(textoUno) || -1;
         textoDos = parseInt(textoDos) || -1;
